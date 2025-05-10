@@ -13,6 +13,11 @@ pnpm dev
 # or
 bun dev
 ```
+To get data run server.js file
+
+cd src
+
+node server.js
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
