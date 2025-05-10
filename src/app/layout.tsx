@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from '../store/AuthContext';
+import { Inter, Libre_Baskerville } from 'next/font/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +13,9 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap', });
+const libre = Libre_Baskerville({ subsets: ['latin'], variable: '--font-libre', display: 'swap', weight: "700" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,12 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+     <AuthProvider>
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${libre.variable} antialiased`}
       >
         {children}
       </body>
     </html>
+    </AuthProvider>
   );
 }
