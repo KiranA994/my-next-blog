@@ -13,11 +13,13 @@ pnpm dev
 # or
 bun dev
 ```
-To get data run server.js file
+Also it is important to run
 
 cd src
 
 node server.js
+
+This will load the data from express server
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
